@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: d3e5bf2d59bfb47f1ac6a1de85c4d9b8
   - enabled: 1
-    path: Assets/Scenes/Ragnarok_Jiayao.unity
+    path: Assets/Scenes/Jiayao_WhereIsMyHammer.unity
     guid: 6baf03b0842084d1ca7296aa361fcc00
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ff25a5bfec6ce4be3bf6e687d275dedd,
