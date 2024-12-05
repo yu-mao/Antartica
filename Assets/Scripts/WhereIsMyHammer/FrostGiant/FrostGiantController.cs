@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class FrostGiantController : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _agent;
+    [SerializeField] private Animator _animator;
     [SerializeField] private PatrolRoute _patrolRoute;
     [SerializeField] private float _stoppingDistanceThreshold = 0.5f;
 
@@ -22,6 +23,7 @@ public class FrostGiantController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _animator.SetFloat("Speed", _agent.velocity.magnitude);
         UpdatePatrol();
     }
 
