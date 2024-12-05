@@ -1,9 +1,13 @@
+using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ChangeMaterialColour : MonoBehaviour
 {
+    public float endHeight;
+    public bool heightReached = false;
+    public Grabbable grabbable;
     // Reference to the Renderer component of the object
     private Renderer objectRenderer;
 
@@ -19,6 +23,7 @@ public class ChangeMaterialColour : MonoBehaviour
 
     void Start()
     {
+
         // Get the Renderer component attached to the GameObject
         objectRenderer = GetComponent<Renderer>();
 
@@ -35,9 +40,14 @@ public class ChangeMaterialColour : MonoBehaviour
 
     void Update()
     {
-        // Gradually blend the colors over time
-        if (objectRenderer != null && blendTime < blendDuration)
+        if (transform.position.y >= endHeight)
         {
+            heightReached = true;
+        }
+        // Gradually blend the colors over time
+        if (objectRenderer != null && blendTime < blendDuration && heightReached)
+        {
+
             blendTime += Time.deltaTime;  // Increase the blend time by the time passed
             float t = Mathf.Clamp01(blendTime / blendDuration); // Calculate interpolation factor between 0 and 1
 
