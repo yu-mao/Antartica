@@ -1,18 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class MountainGate : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool isToOpenGate = false;
+    [SerializeField] private Animator _animator;
+
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        // TODO: check if it's XR rig 
+        // TODO: test animation
+        OpenMountainGate();
+        // TODO: loan WhereIsHammer scene
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OpenMountainGate()
     {
-        
+        if (isToOpenGate)
+        {
+            _animator.SetBool("isToOpenGate", true);
+        }
     }
 }
